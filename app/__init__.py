@@ -1,6 +1,8 @@
 # Import flask and template operators
 from flask import Flask
 
+from flask_jwt_extended import JWTManager
+
 # Import SQLAlchemy
 # from flask.ext.sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
@@ -14,7 +16,7 @@ app.config.from_object('config')
 # Define the database object which is imported
 # by modules and controllers
 db = SQLAlchemy(app)
-
+jwt = JWTManager(app)
 
 # Build the database:
 # This will create the database file using SQLAlchemy

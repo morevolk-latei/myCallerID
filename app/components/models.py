@@ -1,6 +1,8 @@
 # Import the database object (db) from the main application module
 from app import db
 
+from sqlalchemy import and_, or_, not_
+
 # Define a base model for other database tables to inherit
 # class Base(db.Model):
 
@@ -59,6 +61,22 @@ class User(db.Model):
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()
+
+
+    @classmethod
+    def find_by_username(self, username):
+       return self.query.filter_by(name = username).first()
+
+
+    @classmethod
+    def find_by_username_and_phone(self, username, phone):
+       return self.query.filter(
+            and_(
+                self.name.like(username),
+                self.phone.like(phone)
+            )
+        ).first()
+
 
     def __init__(self, name, email, phone):
 

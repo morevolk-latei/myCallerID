@@ -27,4 +27,4 @@ CSRF_ENABLED     = True
 CSRF_SESSION_KEY = "very_secret_key@instahyre"
 
 # Secret key for signing cookies
-SECRET_KEY = "very_secret_key@me"
+SECRET_KEY = JWT_SECRET_KEY = "very_secret_key@me"

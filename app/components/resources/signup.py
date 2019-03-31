@@ -5,7 +5,7 @@ from flask_restful import Resource, reqparse
 from app.components.models import User, Contact
 
 from app import db
-from sqlalchemy.exc import IntegrityError
+# from sqlalchemy.exc import IntegrityError
 
 
 # req parser rules defined here to take care to parsing req body on POST req
