@@ -44,9 +44,13 @@ def index():
 	return buildIndex()
 
 # Import a module / component using its blueprint handler variable (mod_auth)
-from app.components.controllers import mod_auth as auth_module
+from app.components.controllers import (
+	mod_auth as auth_module,
+	mod_search as search_module
+)
 
 # Register blueprint(s): and set its url prefix: app.url/auth
 app.register_blueprint(auth_module, url_prefix='/auth')
+app.register_blueprint(search_module, url_prefix='/search')
 # app.register_blueprint(xyz_module)
 # ..
