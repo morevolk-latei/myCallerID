@@ -1,3 +1,4 @@
+# git clone https://morevolk@bitbucket.org/zzzeek/sqlalchemy.git
 # Statement for enabling the development environment
 DEBUG = True
 ENV = "dev"
@@ -8,7 +9,8 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the database - we are working with
 # SQLite for this example
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
+# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
+SQLALCHEMY_DATABASE_URI = 'mysql://dev_user:dev@User123@localhost/myCallerDB'
 DATABASE_CONNECT_OPTIONS = {}
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 # Application threads. A common general assumption is

@@ -10,6 +10,7 @@ from flask_restful import Resource, Api
 
 # Import the database object from the main app module
 from app import db
+from resources import SignIn, SignUp
 
 # Import module models (i.e. User)
 # from app.components.models import User
@@ -26,17 +27,6 @@ class Auth(Resource):
 	def post(self):
 		pass
 
-
-# Set the route and accepted methods
-class SignIn(Resource):
-
-	def get(self):
-		return { 'message': 'hello world, at signin' }
-
-	def post(self):
-		req_body = request.get_json()
-		return { message: 'post signIn', body: req_body }, 201
-
-
-auth_route.add_resource(SignIn, '/signin/')
 auth_route.add_resource(Auth, '/')
+auth_route.add_resource(SignIn, '/signin/')
+auth_route.add_resource(SignUp, '/signup')

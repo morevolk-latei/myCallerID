@@ -16,6 +16,13 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 
 
+# Build the database:
+# This will create the database file using SQLAlchemy
+@app.before_first_request
+def create_tables():
+    db.create_all()
+
+
 def buildIndex():
 	page = """
 			<h1>Welcome to the my tele app.</h1>
@@ -41,7 +48,3 @@ from app.components.controllers import mod_auth as auth_module
 app.register_blueprint(auth_module, url_prefix='/auth')
 # app.register_blueprint(xyz_module)
 # ..
-
-# Build the database:
-# This will create the database file using SQLAlchemy
-db.create_all()
