@@ -31,7 +31,7 @@ idna==2.7
 incremental==16.10.1
 ipaddress==1.0.22
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2==2.11.3
 jmespath==0.9.3
 keyring==17.0.0
 keyrings.alt==3.0
