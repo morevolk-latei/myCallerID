@@ -65,7 +65,7 @@ SOAPpy==0.12.22
 SQLAlchemy==1.3.1
 style==1.1.0
 torbrowser-launcher==0.2.9
-Twisted==17.9.0
+Twisted==22.1.0
 txsocksx==0.0.0
 update==0.0.1
 urllib3==1.24.1
